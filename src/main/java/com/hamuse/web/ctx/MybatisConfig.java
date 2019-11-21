@@ -15,7 +15,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@MapperScan(basePackages= {"com.wego.web"})
+@MapperScan(basePackages= {"com.hamuse.web"})
 public class MybatisConfig {
 	@Autowired
 	ApplicationContext applicationContext;
@@ -25,7 +25,7 @@ public class MybatisConfig {
     public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {
       SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
       factoryBean.setDataSource(dataSource);
-      factoryBean.setConfigLocation(applicationContext.getResource("classpath:META-INF/mybatis-config.xml"));
+      factoryBean.setConfigLocation(applicationContext.getResource("classpath:META-INF/Mybatisconfig.xml"));
       factoryBean.setMapperLocations(applicationContext.getResources("classpath:com/hamuse/web/**/*Mapper.xml"));
       return factoryBean;
     }

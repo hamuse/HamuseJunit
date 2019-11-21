@@ -1,4 +1,4 @@
-package com.hamuse.web.proxy;
+package com.hamuse.web.user;
 
 import static org.junit.Assert.*;
 import javax.servlet.ServletContext;
@@ -25,25 +25,12 @@ import static org.hamcrest.core.Is.is;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ServletConfig.class}, loader = AnnotationConfigWebContextLoader.class)
 @WebAppConfiguration
-public class CalculatorTest {
-	@Autowired Calculator calculator;
-//	final Calculator cal = new Calculator();
-	
+public class UserCtrlTest {
+	@Autowired UserCtrl userCtrl;
 	
 	@Test
-	public void testSum() {
-		/*assertThat(cal.sum(1,4), is(equalTo(5)));*/
-		assertThat(calculator.sum(1,4), is(equalTo(5)));
-	}
-
-	@Ignore
-	public void testSub() {
-		fail("Not yet implemented");
-	}
-
-	@Ignore
-	public void testAbs() {
-		fail("Not yet implemented");
+	public void testRowCount() {
+		assertThat(userCtrl.rowCount(), not(equalTo(0)));
 	}
 
 }

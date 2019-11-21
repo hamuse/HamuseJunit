@@ -4,7 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hamuse.web.user.UserMapper">
-     <select id="createUser" parameterType="map">
+     <select id="rowCount" resultType="Integer">
+     select count(*)
+     from user
+   </select>
+   <!--   <select id="createUser" parameterType="map">
         ${CREATE_TABLE}
     </select>
     
@@ -39,6 +43,6 @@
      <select id="countUsers" resultType="int" >
     select count(*)
     from user
-   </select>
+   </select> -->
    
 </mapper>

@@ -17,10 +17,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@MapperScan(basePackages = {"com.wego.web"})
-@ComponentScan(basePackages = {"com.wego.web"})
-//@EnableAspectJAutoProxy
-//@EnableTransactionManagement
+@MapperScan(basePackages = {"com.hamuse.web"})
+@ComponentScan(basePackages = {"com.hamuse.web"})
 public class RootConfig {
 		@Bean
 		public DataSource dataSource() {
